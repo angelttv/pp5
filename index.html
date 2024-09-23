@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Evangelion</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300%7CCinzel+Decorative:700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <!--Agregar los elementos semanticas al codigo, Cuando se haga eso se acomodara el contenido-->
+  <body>
+
+      <h1>Neon Genesis Evangelion</h1>
+      <img src="/img/neon-genesis-evangelion-logo.png" alt="evangelion logo">
+
+
+      <ul>
+        <li><span>Home</span></li>
+        <li><a href="#">Get started</a></li>
+        <li><a href="#">Photos</a></li>
+        <li><a href="#">Gear</a></li>
+        <li><a href="#">Forum</a></li>
+      </ul>
+
+
+      <h2>Welcome</h2>
+
+      <p>Neon Genesis Evangelion , también conocida como Evangelion o Eva , es una serie de televisión japonesa de anime mecha producida por Gainax , animada por Tatsunoko y dirigida por Hideaki Anno . Se emitió en TV Tokyo desde octubre de 1995 hasta marzo de 1996.</p>
+
+      <p>¡Así que no pierdas el tiempo! ¡! Corre a ver este anime ahora!!</p>
+
+      <h2>Favourite photos</h2>
+
+      <a href="/img/asuka-1.jpg"><img src="/img/asuka-1_th.png" alt="asuka "></a>
+      <a href="/img/rei-2.png"><img src="/img/rei-2_th.jpg" alt="rei"></a>
+      <a href="/img/misatp-3.jpg"><img src="/img/misato-3_th.jpg" alt="misato"></a>
+      <a href="/img/shinji-4.jpg"><img src="/img/shinji-4_th.jpg" alt="Large bird, mostly white plumage with black plumage on back and rear, long straight white beak, links to larger version of the image"></a>
+
+
+      <p>Este es un sitio de ejemplo — cualquier parte de este codigo puede ser reutilizado como quieras.</p>
+
+      <p><a href="https://archive.org/details/evangelioncastellano" class="enlace-negro">Evangelion online</a> by Prof. Sergio</p>
+
+  </body>
+
+  <script>
+    //No editar el bloque JS
+    const images = document.querySelectorAll('aside a');
+    const modal = document.createElement('div');
+    modal.style.display = 'none';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    document.body.appendChild(modal);
+  
+    images.forEach(image => {
+      image.addEventListener('click', function(event) {
+        event.preventDefault();
+        const img = document.createElement('img');
+        img.src = this.href;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90%';
+        modal.innerHTML = '';
+        modal.appendChild(img);
+        modal.style.display = 'flex';
+      });
+    });
+  
+    modal.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  </script>
+
+
+</html>
